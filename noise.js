@@ -1,5 +1,7 @@
 let noiseMax = 0.5;
 let phase = 0;
+let zoff = 0;
+let roff = 0;
 function setup() {
   createCanvas(500, 500);
 }
@@ -11,17 +13,28 @@ function draw() {
   noFill();
   let t = 0;
   beginShape();
+  if (roff >= 100) {
+    roff -= noise(zoff * 100, noiseMax);
+  }
   for (let a = 0; a < TWO_PI; a += radians(1)) {
     let xoff = map(cos(a + phase), -1, 1, 0, noiseMax);
     let yoff = map(sin(a + phase), -1, 1, 0, noiseMax);
-    let r = map(noise(xoff, yoff), 0, 1, 100, 200);
+    let r =
+      map(
+        noise(xoff, yoff, zoff),
+        0,
+        1,
+        noise(xoff, 1) * 1,
+        noise(yoff, 1) * 100
+      ) + roff;
     let x = r * cos(a);
     let y = r * sin(a);
     vertex(x, y);
-    t += 0.01;
   }
   endShape(CLOSE);
 
   phase += 0.01;
+  zoff += 0.01;
+  roff += noise(zoff * 100, noiseMax);
   //   noLoop();
 }
