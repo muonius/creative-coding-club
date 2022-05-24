@@ -6,7 +6,7 @@ let amplitude = 1;
 function setup() {
   createCanvas(800, 800);
   // freq_slider = createSlider(120, 200, 150, 1);
-
+  frameRate(60);
   angleMode(DEGREES);
 }
 
