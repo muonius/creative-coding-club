@@ -15,6 +15,7 @@ let speed = 0;
 
 function setup() {
   createCanvas(500, 500);
+  angleMode(DEGREES);
 }
 
 function draw() {
@@ -28,14 +29,24 @@ function draw() {
   fill(255);
   noStroke();
 
+  translate(width / 2, height / 2);
+
   // study this loop. do you understand how the line of ellipses is created?
-  for (i = 0; i < 1; i += 0.002) {
-    let x = lerp(startX, endX, i);
-    let y = lerp(startY, endY, i);
+  for (i = 0; i < 360; i += 1) {
+    let r1 = map(sin(i * 3), -1, 1, 50, 100);
+    let r2 = map(sin(i * 6 + 180), -1, 1, 50, 100);
+
+    let r = r1 + r2;
+    // let r = map(sin(i * amptitude2), -1, 1, 50, 100); default
+    let x = r * cos(i);
+    let y = r * sin(i);
+
+    // let x = lerp(startX, endX, i);
+    // let y = lerp(startY, endY, i);
 
     // hint: drive offsetX and offsetY with noise() instead of random()
-    let offsetX = cos(i * frequency + frameCount / 15) * amplitude * 100;
-    let offsetY = sin(i * frequency + frameCount / 10) * amplitude * 100;
+    let offsetX = cos(i * frequency + frameCount) * amplitude * 100;
+    let offsetY = sin(i * frequency + frameCount) * amplitude * 100;
 
     ellipse(x + offsetX, y + offsetY, 1, 1);
   }
