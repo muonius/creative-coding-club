@@ -14,7 +14,7 @@ function draw() {
 
   translate(width / 2, height / 2);
   beginShape();
-  for (let i = 0; i < 361; i++) {
+  for (let i = 0; i < 90; i++) {
     let r1Min = map(sin(frameCount), -1, 1, 50, 100);
     let r1Max = map(sin(frameCount), -1, 1, 100, 0);
 
@@ -35,5 +35,5 @@ function draw() {
     let y = r * sin(i);
     vertex(x, y);
   }
-  endShape(CLOSE);
+  endShape();
 }
