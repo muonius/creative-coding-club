@@ -15,9 +15,10 @@ function draw() {
   background(50);
   ellipseMode(CENTER);
   // let frequency = freq_slider.value();
-  // let now = clock();
-  let frequency = 189;
-  // let seconds = 100 * now.progress.min;
+  let now = clock();
+  // amplitude = map(now.hour, 1, 24, 0.1, 1);
+  let frequency = map(now.hour, 1, 12, 100, 200);
+  let mins = map(now.sec, 0, 60, 0, 60);
 
   fill(255);
   noStroke();
@@ -32,12 +33,12 @@ function draw() {
     let x = r * cos(i);
     let y = r * sin(i);
 
-    let offsetX = cos(i * frequency + frameCount) * amplitude * 100;
-    let offsetY = sin(i * frequency + frameCount) * amplitude * 100;
+    let offsetX = cos(i * frequency + mins) * amplitude * 100;
+    let offsetY = sin(i * frequency + mins) * amplitude * 100;
 
     ellipse(x + offsetX, y + offsetY, 2, 2);
     frequency += 0.000001;
     // console.log(frequency);
-    console.log(seconds);
+    console.log(now.sec);
   }
 }
