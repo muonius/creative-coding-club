@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Time</title>
+  <style>
+
+    .mySliders{
+  width: 110px;
+  background-color: transparent;
+  /* Removes some defaults */
+  -webkit-appearance: none;
+}
+    .mySliders:focus {
+  /* Stops the default outline showing up */
+  outline: none;
+}
+
+/* This is the "track" that the slider sits on  */
+.mySliders::-webkit-slider-runnable-track {
+  background: white;
+  height: 2px;
+  -webkit-appearance: none;
+  /* Turns the cursor into the hand pointer icon when hovering over the slider  */
+  cursor: pointer;
+  
+}
+
+/* This is the moveable bit of the slider, known as the "thumb"*/
+.mySliders::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  background: rgb(224, 223, 223);
+  cursor: pointer;
+  -webkit-appearance: none;
+  /* negative top padding moves it up */
+  margin-top: -6px;
+  /* Border radius gives rounded corners, if they're big enough, you end up with circles */
+  border-radius: 8px; 
+}
+
+  </style>
+</head>
+
+<body>
+  <main id="time-keeper"></main>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="./final.js"></script>
+</body>
+
+</html>
