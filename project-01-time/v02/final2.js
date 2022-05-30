@@ -2,6 +2,7 @@
 
 // let freq_slider;
 let amplitude = 1;
+let discrete = false;
 
 function setup() {
   createCanvas(800, 800);
@@ -14,7 +15,10 @@ function draw() {
   background(50);
   ellipseMode(CENTER);
   // let frequency = freq_slider.value();
+  // let now = clock();
   let frequency = 189;
+  // let seconds = 100 * now.progress.min;
+
   fill(255);
   noStroke();
 
@@ -34,5 +38,6 @@ function draw() {
     ellipse(x + offsetX, y + offsetY, 2, 2);
     frequency += 0.000001;
     // console.log(frequency);
+    console.log(seconds);
   }
 }
