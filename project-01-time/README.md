@@ -8,6 +8,7 @@ My idea starts off by creating sin waves on a polar coordinate system and then a
 
 Finally, I add in a frequency slider to showcase the visual variations. The animation is tied to `frameCount`.
 <br>
+<br>
 <img src="./screenshot.png" width="500" alt="Time Screenshot">
 <br>
 **[Open Processing](https://openprocessing.org/sketch/1584180)**
