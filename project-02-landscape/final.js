@@ -13,7 +13,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(21);
   land.translate(width / 2, height / 2);
   land.noFill();
   land.stroke(255);
